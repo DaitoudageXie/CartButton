@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CartNumView">
+        <!--加按钮背景否开启fill模式 默认是stroke(false)-->
+        <attr name="isAddFillMode" format="boolean" />
+        <attr name="addEnableBgColor" format="color"/>
+        <attr name="addEnableFgColor" format="color"/>
+        <attr name="addDisableBgColor" format="color"/>
+        <attr name="addDisableFgColor" format="color"/>
+        <!---->
+        <!--减背景-->
+        <attr name="isDelFillMode" format="boolean"/>
+        <attr name="delEnableBgColor" format="color"/>
+        <attr name="delEnableFgColor" format="color"/>
+        <attr name="delDisableBgColor" format="color"/>
+        <attr name="delDisableFgColor" format="color"/>
+
+
+        <!--圆的半径-->
+        <attr name="radius" format="dimension"/>
+        <!--圆圈的宽度-->
+        <attr name="circleStokeWidth" format="dimension"/>
+        <!--线(+ - 符号)的宽度-->
+        <attr name="lineWidth" format="dimension"/>
+
+        <!--两个圆之间的间距-->
+        <attr name="gapBetweenCircle" format="dimension"/>
+        <!--绘制数量的textSize-->
+        <attr name="numTextSize" format="dimension"/>
+
+        <!--最大数量和当前数量-->
+        <attr name="maxCount" format="integer"/>
+        <attr name="count" format="integer"/>
+
+
+    </declare-styleable>
+</resources>
