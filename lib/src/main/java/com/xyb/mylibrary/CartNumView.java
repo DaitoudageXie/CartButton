@@ -343,7 +343,6 @@ public class CartNumView extends View {
         }
 
     }
-
     private void onAddClick() {
         if (mCount<mMaxCount){
             if (clickListener!=null){
