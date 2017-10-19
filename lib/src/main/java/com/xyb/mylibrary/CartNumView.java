@@ -181,7 +181,7 @@ public class CartNumView extends View {
         mCount = 1;
 
         mRadius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 12.5f, getResources().getDisplayMetrics());
-        mCircleWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 1f, getResources().getDisplayMetrics());
+        mCircleWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 10f, getResources().getDisplayMetrics());
         mLineWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 2f, getResources().getDisplayMetrics());
         mTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14.5f, getResources().getDisplayMetrics());
 
@@ -266,8 +266,8 @@ public class CartNumView extends View {
 
         //画数字
         canvas.save();
-        float textWidth=mDelPaint.measureText(mCount+"")/2;
-        canvas.translate(mLeft + mRadius * 2 + mCircleWidth/2+(mGapBetweenCircle/2 - textWidth) ,
+        float textWidth=mTextPaint.measureText(mCount+"");
+        canvas.translate(mLeft + mRadius * 2 + mCircleWidth/2+(mGapBetweenCircle/2 - textWidth/2) ,
                 mTop + mRadius - (mFontMetrics.top + mFontMetrics.bottom) / 2);
         canvas.drawText(mCount + "", 0, 0, mTextPaint);
         canvas.restore();
@@ -283,15 +283,15 @@ public class CartNumView extends View {
         float left = mLeft + mRadius * 2 +mCircleWidth/2+ mGapBetweenCircle;
 
         if (isAddFillMode){
-            mAddPath.addCircle(left + mRadius + mCircleWidth, mTop + mRadius, mRadius+mCircleWidth/2, Path.Direction.CW);
+            mAddPath.addCircle(left + mRadius + mCircleWidth/2, mTop + mRadius, mRadius+mCircleWidth/2, Path.Direction.CW);
         }else{
-            mAddPath.addCircle(left + mRadius + mCircleWidth, mTop + mRadius, mRadius, Path.Direction.CW);
+            mAddPath.addCircle(left + mRadius + mCircleWidth/2, mTop + mRadius, mRadius, Path.Direction.CW);
         }
         mAddRegion.setPath(mAddPath, new Region(mLeft, mTop, mWidth - getPaddingRight(), mHeight - getPaddingBottom()));
         canvas.drawPath(mAddPath, mAddPaint);
         //前景
         canvas.save();
-        canvas.translate(left + mCircleWidth + mRadius, mTop + mRadius);
+        canvas.translate(left + mCircleWidth/2 + mRadius, mTop + mRadius);
         if (mCount < mMaxCount) {
             mAddPaint.setColor(mAddEnableFgColor);
         } else {

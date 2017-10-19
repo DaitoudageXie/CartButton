@@ -16,7 +16,7 @@ CartButton是一款购物车增加减少控件，方便增加减少产品
  Step 2. Add the dependency
  ```
  	dependencies {
-	        compile 'com.github.DaitoudageXie:CartButton:1.0.0'
+	        compile 'com.github.DaitoudageXie:CartButton:1.0.2'
 	}
 
  ```
@@ -63,6 +63,12 @@ CartButton是一款购物车增加减少控件，方便增加减少产品
 
             }
         });
+ ```
+
+ 若SDK<17,在Mainfest文件中加入
+ ```
+<uses-sdk tools:overrideLibrary="com.xyb.mylibrary"/>
+
  ```
  
  **注意事项：onAdd(int count)回调方法返回的count 并没有增加 方便对购物车数据操作成功后（存取数据库或网络请求）再调用increaseCount方法更改，onDel方法同理**
