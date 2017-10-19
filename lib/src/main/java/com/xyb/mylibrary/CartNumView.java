@@ -322,9 +322,8 @@ public class CartNumView extends View {
             case MotionEvent.ACTION_CANCEL:
                 break;
         }
-
-
-        return super.onTouchEvent(event);
+        //消费掉点击事件
+        return true;
     }
 
     private void onDelClick() {
