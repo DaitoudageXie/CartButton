@@ -16,7 +16,7 @@ CartButton是一款购物车增加减少控件，方便增加减少产品
  Step 2. Add the dependency
  ```
  	dependencies {
-	        compile 'com.github.DaitoudageXie:CartButton:1.0.2'
+	        compile 'com.github.DaitoudageXie:CartButton:1.0.3'
 	}
 
  ```
